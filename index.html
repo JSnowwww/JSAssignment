@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-brand w-100">
+                <h1>Magic Calculator x Converter</h1>
+            </div>
+        </div>
+    </nav>
+
+    <section class="content-section-padding" id="section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-lg-6">
+                    <div class="card text-center pb-2">
+                        <div class="card-body" style="border-radius: 20px;">
+                            <i class="fa fa-calculator" style="font-size:72px;"></i>
+                            <h1>Magic Calculator</h1>
+                            <br>
+                            <p>Imagine a digital wizard at your fingertips, ready to perform mathematical magic with a
+                                touch of whimsy. Introducing our webpage calculator – a digital companion for
+                                number-crunching adventures on your screen.</p>
+                            <button onclick="calcmodal()">click</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6">
+                    <div class="card text-center pb-2">
+                        <div class="card-body">
+                            <i class="fa fa-thermometer-3" style="font-size:72px"></i>
+                            <h1>Magic Converter</h1>
+                            <br>
+                            <p>Enter your temperature in the unit of your choice, and watch the numbers light up with
+                                energy. The converter responds to your input, bringing your chosen temperature to life
+                                in a vibrant display.</p>
+                            <button onclick="convmodal()">click</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="calcmodal" class="platform hide">
+
+        <h1>Magic Calculator</h1>
+        <input type="text" id="num" readonly>
+        <div class="button-group">
+            <button value="7" onclick="one(7)">7</button>
+            <button value="8" onclick="one(8)">8</button>
+            <button value="9" onclick="one(9)">9</button>
+            <button value="/" onclick="plus('/')">/</button>
+        </div>
+
+        <div class="button-group">
+            <button value="4" onclick="one(4)">4</button>
+            <button value="5" onclick="one(5)">5</button>
+            <button value="6" onclick="one(6)">6</button>
+            <button value="*" onclick="plus('*')">*</button>
+        </div>
+
+        <div class="button-group">
+            <button value="1" onclick="one(1)">1</button>
+            <button value="2" onclick="one(2)">2</button>
+            <button value="3" onclick="one(3)">3</button>
+            <button value="-" onclick="plus('-')">-</button>
+        </div>
+
+        <div class="button-group">
+            <button onclick="clr()">AC</button>
+            <button value="0" onclick="one(0)">0</button>
+            <button onclick="equal()">=</button>
+            <button value="+" onclick="plus('+')">+</button>
+        </div>
+
+        <span id="close" onclick="xclose()">
+            <h4><i class="fa fa-close"></i></h4>
+        </span>
+    </div>
+
+    <div id="convmodal" class="platform1 hide">
+        <h1>Magic Converter</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <input type="number" value="0"  id="num1">
+            </div>
+            <div class="col-md-6">
+                <input type="number" value="0" id="num2" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="button-group1" id="listbutton1">
+                    <input type="button" value="METER" class="btn active">
+                    <input type="button" value="KILOMETER" class="btn">
+                    <input type="button" value="CENTIMETER" class="btn">
+                    <input type="button" value="MILE" class="btn">
+                    <input type="button" value="INCH" class="btn">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="button-group1" id="listbutton2">
+                    <input type="button" onclick="converter('METER')" value="METER" class="btn1 active">
+                    <input type="button" onclick="converter('KILOMETER')" value="KILOMETER" class="btn1">
+                    <input type="button" onclick="converter('CENTIMETER')" value="CENTIMETER" class="btn1">
+                    <input type="button" onclick="converter('MILE')" value="MILE" class="btn1">
+                    <input type="button" onclick="converter('INCH')" value="INCH" class="btn1">
+                </div>
+            </div>
+        </div>
+
+        <span id="close_conv" onclick="xclose_conv()">
+            <h4><i class="fa fa-close"></i></h4>
+        </span>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
